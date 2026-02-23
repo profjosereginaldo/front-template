@@ -14,7 +14,7 @@ Com o crescimento do sistema, surgiram problemas como dificuldade de manutençã
 Você faz parte da equipe responsável por propor e implementar uma nova estrutura para a Dashboard.
 
 ## ❓ Problema Norteador
-Como reestruturar uma página construída apenas com <div> para que ela se torne semântica, organizada, responsiva, escalável e
+Como reestruturar uma página construída apenas com `<div>` para que ela se torne semântica, organizada, responsiva, escalável e
 alinhada às boas práticas modernas de HTML5 e CSS3?
 
 ## 🎯 Objetivo
@@ -54,7 +54,7 @@ git checkout -b feature/pratica01
 - **Barra superior (Topbar)**: Área com saudação e avatar do usuário;
 - **Blocos de conteúdo**: Mural de Avisos, Calendário Acadêmico e Minhas Disciplinas.
 4. Requisitos obrigatórios:
-- Apenas um <h1> na página;
+- Apenas um `<h1>` na página;
 - Hierarquia correta de títulos;
 - Imagens com atributo alt.
 5. Desenvolva os estilos no arquivo `style.css`.
@@ -119,7 +119,7 @@ git push origin feature/pratica01
 
 ⚠️ **Erros comuns**
 - Criar a branch de trabalho a partir de uma branch diferente da indicada na atividade;
-- Utilizar múltiplos <h1>;
+- Utilizar múltiplos `<h1>`;
 - Usar `<div>` em excesso;
 - Organizar cartões com Flexbox em vez de Grid;
 - O layout não estar responsivo;
