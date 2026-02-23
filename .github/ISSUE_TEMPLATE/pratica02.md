@@ -47,8 +47,8 @@ git checkout -b feature/pratica02
 **2️⃣ Implementação do código**
 1. No painel esquerdo do VSCode, localize a pasta `aluno-online-vanilla`.
 2. Desenvolva no arquivo `login.html` a página de Login contendo email, senha, botão de envio e área para mensagens de erro.
-- Deve existir apenas um <form>;
-- Cada campo deve possuir associação semântica correta com seu <label>.
+- Deve existir apenas um `<form>`;
+- Cada campo deve possuir associação semântica correta com seu `<label>`.
 3. Desenvolva no arquivo `style.css` os estilos da página de Login.
 4. Desenvolva no arquivo `main.js` a validação do formulário.
 - O formulário não pode ser enviado se houver campos vazios;

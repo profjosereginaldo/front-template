@@ -23,7 +23,7 @@ Nesta prática, você irá:
 - Implementar tratamento de eventos (`onChange` e `onSubmit`);
 - Controlar os valores digitados utilizando `state`;
 - Atualizar dinamicamente a interface com base nas interações do usuário;
-- Utilizar **props** para comunicação entre componentes;
+- Utilizar `props` para comunicação entre componentes;
 - Impedir comportamento padrão de recarregamento do formulário;
 - Exibir mensagens de validação de forma dinâmica.
 
@@ -50,13 +50,13 @@ git checkout -b feature/pratica05
 1. No painel esquerdo do VSCode, localize a pasta `aluno-online-react`.
 2. Desenvolva os componentes da seguinte forma: 
 - Crie componentes para os inputs sem estado;
-- Os inputs devem ser controlados, recebendo value e onChange via props;
+- Os inputs devem ser controlados, recebendo `value` e `onChange` via `props`;
 - Cada componente deve ser criado como função;
 - Cada componente deve estar em arquivo próprio;
 - Cada componente deve possuir seu próprio arquivo CSS.
 3. Desenvolva a página nos arquivos `Login.jsx` e `Login.css`.
 - Crie estados necessários para armazenar valores e mensagens de erro;
-- Passe os estados e funções de atualização para os componentes via *props*.
+- Passe os estados e funções de atualização para os componentes via `props`.
 - Crie um evento `handleSubmit()` para evitar o recarregamento da página, validar os dados do formulário e atualizar os estados de erro;
 - A validação deve verificar campos obrigatórios, formato básico de e-mail e senha com mínimo de 6 caracteres;
 - O layout deve manter coerência visual com as práticas anteriores.
@@ -86,7 +86,7 @@ docker compose exec app npm run dev
 
 4️⃣ **Checklist antes de enviar**
 - [ ] Branch criada a partir da develop
-- [ ] Componentes recebem props corretamente
+- [ ] Componentes recebem `props` corretamente
 - [ ] Estados utilizados apenas em `Login.jsx`
 - [ ] Evento onSubmit implementado
 - [ ] Uso correto de `event.preventDefault()`
@@ -110,7 +110,7 @@ git push origin feature/pratica05
 
 ⚠️ **Erros comuns**
 - Criar a branch de trabalho a partir de uma branch diferente da indicada na atividade;
-- Não passar *props* para o input;
+- Não passar `props` para o input;
 - Esquecer de utilizar `event.preventDefault()` no submit;
 - Importar componente com caminho incorreto;
 - Esquecer de iniciar o Docker;
