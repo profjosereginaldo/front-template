@@ -14,14 +14,13 @@ Atualmente, para visualizar uma página diferente é preciso alterar manualmente
 A equipe decidiu implementar um sistema de rotas para que o usuário possa navegar entre as páginas sem recarregar a aplicação.
 
 ## ❓ Problema Norteador
-Como permitir que o usuário alterne entre diferentes páginas de uma SPA (Single Page Application) sem que o navegador recarregue a página completa?
+Como estruturar a navegação para que o usuário sinta que está em um aplicativo fluido, mantendo partes da interface fixas (como o Menu) enquanto apenas o conteúdo central é substituído com base na URL?
 
 ## 🎯 Objetivo
 Nesta prática, você irá:
-- Instalar e configurar o **React Router**;
 - Definir rotas para cada página da aplicação;
-- Criar um componente `Layout` com `<Outlet />` para envolver as páginas;
-- Substituir os links do menu lateral por componentes `<NavLink>`;
+- Implementar o padrão **Layout & Outlet** para reaproveitamento de interface;
+- Diferenciar links tradicionais (`<a>`) de navegação SPA (`NavLink`);
 - Garantir que a navegação ocorra sem recarregamento de página.
 
 ## 📝 Instruções da Atividade
@@ -37,24 +36,14 @@ git checkout -b feature/pratica06
 ```
 
 **2️⃣ Implementação do código**
-1. No terminal, instale o React Router:
-```bash
-npm install react-router
-```
-2. Em `main.jsx`, envolva o `<App />` com `<BrowserRouter>`;
-3. Crie o componente `Layout` (em `src/components/Layout/`) que renderize:
-- O componente de menu lateral (Sidebar);
-- O componente `<Outlet />` do React Router no lugar onde as páginas devem aparecer.
-4. Em `App.jsx`, configure as rotas utilizando `<Routes>` e `<Route>`:
-- A rota pai `/` deve usar o componente `Layout`;
-- Cada página deve ser uma rota filha com seu caminho correspondente:
-   - `/` → `Dashboard`
-   - `/faltas` → `Faltas`
-   - `/notas` → `Notas`
-   - `/boletos` → `Boletos`
-   - `/requerimentos` → `Requerimentos`
-5. No componente de menu lateral, crie os links para as páginas utilizando o componente `<NavLink>` do React Router;
-6. Utilize a prop `className` do `<NavLink>` com a função `({ isActive })` para aplicar um estilo diferenciado ao item de menu da página atual.
+1. No terminal, instale o React Router;
+2. Configure o ponto de entrada da aplicação (`main.jsx`) para suportar navegação via histórico do navegador;
+3. Crie o componente `Layout` (em `src/layouts/`) que deve envolver as páginas filhas. Utilize o componente `<Outlet />` para indicar exatamente onde o conteúdo dinâmico deve ser injetado.
+4. Configure o `App.jsx` para gerenciar a árvore de rotas:
+- A rota `/` deve carregar o `Layout`.
+- As demais rotas (`/faltas`, `/notas`, `/boletos`, etc.) devem ser **filhas** da rota principal.
+5. Refatore o componente `Menu` utilizando o componente `<NavLink>` para criar links de acesso às páginas;
+6. Implemente um feedback visual (estilo CSS) que mostre ao aluno em qual página ele está no momento, usando os recursos nativos do `NavLink`.
 
 **3️⃣ Execução e teste**
 1. Inicie o servidor de desenvolvimento (caso não esteja rodando):
@@ -97,7 +86,7 @@ git push origin feature/pratica06
 ⚠️ **Erros comuns**
 - Envolver o `<BrowserRouter>` no lugar errado (dentro do `App` em vez de no `main.jsx`);
 - Esquecer o `<Outlet />` no componente `Layout`, fazendo as páginas não renderizarem;
-- Usar `<a href="...">` no menu em vez de `<NavLink to="...">` — isso causa recarregamento;
+- Usar `<a href="...">` no menu em vez de `<NavLink to="...">`;
 - Definir a rota do `Dashboard` como `/dashboard` em vez de `/`, deixando a raiz vazia;
 - Criar a branch de trabalho a partir de uma branch diferente da indicada;
 - Enviar o PR para a branch errada.
